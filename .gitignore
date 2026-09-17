@@ -5,3 +5,4 @@ MUSE_IMPLEMENT.md
 MUSE_REVIEW.md
 node_modules
 out
+tsconfig.tsbuildinfo
