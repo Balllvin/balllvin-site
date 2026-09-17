@@ -90,8 +90,7 @@ export default function Page() {
           >
             <h3>Notebook</h3>
             <p className={styles.cardText}>
-              Live research notebooks for site, Mac, and CLI. One notebook
-              per project. You keep the data.
+              Database for your knowledge. Available as a site, Mac app, and CLI.
             </p>
           </a>
           <a
@@ -103,9 +102,7 @@ export default function Page() {
           >
             <h3>Marauder</h3>
             <p className={styles.cardText}>
-              Private stack running Notebook with MAIN, Terminal, PWA, and
-              bots. A long/short research app tuned for speed over feature
-              theater.
+              Investment research app. Knowledge base for stocks, with AI tools and workflows that help me make money.
             </p>
           </a>
         </div>
