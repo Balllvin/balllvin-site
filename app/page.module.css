@@ -265,6 +265,32 @@
     animation-timeline: view();
     animation-range: entry 0% entry 85%;
   }
+
+  /* Lower-scene entrances: same cardIn film language, long gentle ranges. */
+  .productsHead,
+  .writingHead,
+  .linksInner > h2,
+  .linkList li,
+  .close > h2,
+  .close > p,
+  .closeLinks {
+    animation: cardIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 85%;
+  }
+
+  .linkList li:nth-child(2) {
+    animation-range: entry 5% entry 90%;
+  }
+
+  .linkList li:nth-child(3) {
+    animation-range: entry 10% entry 95%;
+  }
+
+  .close > p,
+  .closeLinks {
+    animation-range: entry 0% entry 90%;
+  }
 }
 
 @keyframes beatLight {
@@ -640,6 +666,13 @@
   .holdStill,
   .card,
   .writingStrip,
+  .productsHead,
+  .writingHead,
+  .linksInner h2,
+  .linkList li,
+  .close h2,
+  .close p,
+  .closeLinks,
   .promise {
     animation: none;
     opacity: 1;
