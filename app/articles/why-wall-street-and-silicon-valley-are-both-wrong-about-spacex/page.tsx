@@ -18,7 +18,7 @@ export default function ArticlePage() {
     <article className={styles.article}>
       <header className={styles.header}>
         <Link className={styles.back} href="/">
-          Back home
+          ← Back home
         </Link>
         <p className={styles.meta}>
           <time dateTime="2026-08-31">31 Aug 2026</time>
