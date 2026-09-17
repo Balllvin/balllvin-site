@@ -137,29 +137,18 @@
   padding-top: clamp(1.5rem, 5dvh, 3rem);
 }
 
-.facts {
-  display: grid;
-  gap: 0.9rem;
-  margin: 2.5rem 0 0;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--line);
+.opinions {
+  margin: 1.25rem 0 0;
 }
 
-.facts > div {
-  display: grid;
-  grid-template-columns: 5rem 1fr;
-  gap: 1rem;
+.opinions a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-.facts dt {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.facts dd {
-  margin: 0;
+.opinions a:hover {
+  color: #93dcc4;
 }
 
 @keyframes riseIn {

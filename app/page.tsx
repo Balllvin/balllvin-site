@@ -40,24 +40,15 @@ export default function Page() {
             <p className={styles.promise}>
               Automating Creation
             </p>
-            <dl className={styles.facts}>
-              <div>
-                <dt>Base</dt>
-                <dd>Switzerland</dd>
-              </div>
-              <div>
-                <dt>Work</dt>
-                <dd>Marauder, Notebook</dd>
-              </div>
-              <div>
-                <dt>Also</dt>
-                <dd>Investing</dd>
-              </div>
-              <div>
-                <dt>Now</dt>
-                <dd>Shipping both</dd>
-              </div>
-            </dl>
+            <p className={styles.opinions}>
+              <a
+                href="https://x.com/balllvest"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read my opinions on X.
+              </a>
+            </p>
           </div>
         </div>
       </section>
