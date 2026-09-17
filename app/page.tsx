@@ -40,13 +40,14 @@ export default function Page() {
             <p className={styles.promise}>
               Automating Creation
             </p>
-            <p className={styles.opinions}>
+            <p className={styles.heroSub}>
+              <span>Nerd at Heart</span>
               <a
                 href="https://x.com/balllvest"
                 target="_blank"
                 rel="noreferrer"
               >
-                I have opinions. They’re on X.
+                @balllvest
               </a>
             </p>
           </div>
