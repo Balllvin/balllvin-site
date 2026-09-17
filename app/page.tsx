@@ -1,7 +1,5 @@
-// Design read: personal portfolio scroll-film for recruiters and peers,
-// cinematic calm Swiss/Zug dark editorial language, CSS sticky plus
-// scroll-driven first, restrained motion only where CSS cannot pin.
-// Dials: VARIANCE 7 / MOTION 7 / DENSITY 3.
+// Personal site: scroll-film. CSS sticky + scroll-driven motion first.
+// Copy must stay concrete. No filler adjectives.
 
 import styles from "./page.module.css";
 
@@ -9,24 +7,23 @@ const crewBeats = [
   {
     index: "01",
     title: "AI crew",
-    text: "A small crew of focused agents that read, draft, and check my work before I ship it.",
+    text: "Agents that read, draft, and check work before I ship.",
   },
   {
     index: "02",
     title: "Research",
-    text: "Slow notes on markets, systems, and tools. Written to be reread, not scrolled past.",
+    text: "Notes on markets and systems I actually use.",
   },
   {
     index: "03",
     title: "Investing",
-    text: "Quiet tooling for tracking ideas, risk, and patience. Built for long holding periods.",
+    text: "Tooling for ideas and risk.",
   },
 ];
 
 export default function Page() {
   return (
     <div className={styles.film}>
-      {/* Scene 1: Open / identity. Asymmetric split manifesto hero. */}
       <section className={styles.open} aria-labelledby="alvin-title">
         <div className={styles.rays} aria-hidden="true" />
         <div className={styles.openGrid}>
@@ -38,8 +35,7 @@ export default function Page() {
           </div>
           <div className={styles.openRight}>
             <p className={styles.promise}>
-              I build a small AI crew, keep close research notes, and shape
-              investing tools that stay calm under pressure.
+              I make AI useful for real work. I also invest.
             </p>
             <dl className={styles.facts}>
               <div>
@@ -48,7 +44,11 @@ export default function Page() {
               </div>
               <div>
                 <dt>Work</dt>
-                <dd>Making AI useful, and Investing</dd>
+                <dd>Making AI useful</dd>
+              </div>
+              <div>
+                <dt>Also</dt>
+                <dd>Investing</dd>
               </div>
               <div>
                 <dt>Now</dt>
@@ -59,7 +59,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Scene 2: Hold / pin. Tall scroller with sticky still, CSS only. */}
       <section className={styles.hold} aria-label="What I build">
         <div className={styles.holdSticky}>
           <div className={styles.holdStill}>
@@ -79,47 +78,36 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Scene 3: Cut to products. Card grid, new layout family. */}
       <section className={styles.products} aria-labelledby="products-title">
         <div className={styles.productsHead}>
-          <h2 id="products-title">Shipped work</h2>
-          <p>Two live builds. Open them, click around, judge the craft.</p>
+          <h2 id="products-title">Shipped Work</h2>
         </div>
         <div className={styles.cards}>
-          <article className={`${styles.card} ${styles.glare}`}>
+          <a
+            className={`${styles.card} ${styles.glare}`}
+            href="https://notebook-marauder.up.railway.app"
+            target="_blank"
+            rel="noreferrer"
+          >
             <h3>Notebook</h3>
             <p className={styles.cardText}>
-              A working notebook for research and investing notes. Plain
-              structure, fast pages, easy to revisit.
+              Research and investing notes in one place.
             </p>
-            <a
-              className={styles.cardLink}
-              href="https://notebook-marauder.up.railway.app"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Notebook
-            </a>
-          </article>
-          <article className={`${styles.card} ${styles.glare}`}>
+          </a>
+          <a
+            className={`${styles.card} ${styles.glare}`}
+            href="https://marauder-main.up.railway.app"
+            target="_blank"
+            rel="noreferrer"
+          >
             <h3>Marauder</h3>
             <p className={styles.cardText}>
-              The main Marauder build. The operational side of the same ideas:
-              track, review, act.
+              Research desk for long and short work.
             </p>
-            <a
-              className={styles.cardLink}
-              href="https://marauder-main.up.railway.app"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Marauder
-            </a>
-          </article>
+          </a>
         </div>
       </section>
 
-      {/* Scene 4: Links. Real links only, editorial index list. */}
       <section className={styles.links} aria-labelledby="links-title">
         <div className={styles.linksInner}>
           <h2 id="links-title">Elsewhere</h2>
@@ -164,13 +152,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Scene 5: Close CTA. In normal flow, never opacity gated. */}
       <section className={styles.close} aria-labelledby="close-title">
         <h2 id="close-title">Say hello</h2>
-        <p>
-          For work, research, or investing talk, reach out on X or LinkedIn.
-          Short notes get fast replies.
-        </p>
+        <p>Message me on X for work, research, or investing talk.</p>
         <div className={styles.closeLinks}>
           <a
             className={styles.closeButton}
@@ -189,9 +173,7 @@ export default function Page() {
             Connect on LinkedIn
           </a>
         </div>
-        <p className={styles.colophon}>
-          Alvin Stark, Switzerland.
-        </p>
+        <p className={styles.colophon}>Alvin Stark</p>
       </section>
     </div>
   );

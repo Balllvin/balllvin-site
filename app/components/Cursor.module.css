@@ -10,29 +10,23 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
   border-radius: 50%;
   background: var(--accent);
+  box-shadow: 0 0 12px rgba(127, 209, 185, 0.55);
 }
 
 .ring {
-  width: 34px;
-  height: 34px;
-  margin: -17px 0 0 -17px;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
   border-radius: 50%;
-  border: 1px solid rgba(127, 209, 185, 0.55);
+  border: 1.5px solid rgba(127, 209, 185, 0.75);
 }
 
-/* Only show the custom cursor when the enhancement is active.
-   The native cursor is hidden only then; touch and reduced-motion
-   keep the native cursor. */
-.hasCursor,
-.hasCursor * {
-  cursor: none;
-}
-
+/* Do not hide the native cursor. Custom mark is additive. */
 .hasCursor .dot,
 .hasCursor .ring {
   display: block;
