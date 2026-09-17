@@ -23,7 +23,7 @@ const crewBeats = [
   {
     index: "03",
     title: "Investing",
-    text: "Tooling for ideas and risk.",
+    text: "A separate account for ideas and risk.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function Page() {
           </div>
           <div className={styles.openRight}>
             <p className={styles.promise}>
-              I make AI useful for real work. I also invest.
+              I ship Marauder and Notebook, built with an AI crew I use daily.
             </p>
             <dl className={styles.facts}>
               <div>
@@ -50,7 +50,7 @@ export default function Page() {
               </div>
               <div>
                 <dt>Work</dt>
-                <dd>Making AI useful</dd>
+                <dd>Marauder, Notebook, AI crew</dd>
               </div>
               <div>
                 <dt>Also</dt>
@@ -58,7 +58,7 @@ export default function Page() {
               </div>
               <div>
                 <dt>Now</dt>
-                <dd>Marauder and Notebook</dd>
+                <dd>Shipping both</dd>
               </div>
             </dl>
           </div>
@@ -108,7 +108,7 @@ export default function Page() {
           >
             <h3>Marauder</h3>
             <p className={styles.cardText}>
-              Long/short research desk aiming to democratize serious research.
+              Long/short research desk for markets, with notebooks and agents.
             </p>
           </a>
         </div>

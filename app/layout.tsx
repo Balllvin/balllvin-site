@@ -14,7 +14,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Alvin Stark",
   description:
-    "Alvin Stark. Making AI useful for real work. Also investing. Building Marauder and Notebook.",
+    "Alvin Stark in Switzerland. Ships Marauder and Notebook, built with an AI crew he uses daily. Also investing.",
 };
 
 export const viewport: Viewport = {
