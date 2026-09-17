@@ -1,0 +1,41 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 50;
+  background: transparent;
+  pointer-events: none;
+}
+
+.bar {
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+@supports (animation-timeline: scroll()) {
+  .bar {
+    animation: filmProgress linear;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes filmProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    animation: none;
+    transform: scaleX(0);
+  }
+}

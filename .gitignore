@@ -1,0 +1,7 @@
+*.log
+.DS_Store
+.next
+MUSE_IMPLEMENT.md
+MUSE_REVIEW.md
+node_modules
+out

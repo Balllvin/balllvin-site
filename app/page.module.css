@@ -1,0 +1,535 @@
+.film {
+  background: var(--bg);
+}
+
+/* ---------- Scene 1: Open / identity ---------- */
+
+.open {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  overflow: clip;
+  border-bottom: 1px solid var(--line);
+}
+
+.rays {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 45% at 78% 8%, rgba(127, 209, 185, 0.16), transparent 70%),
+    conic-gradient(
+      from 200deg at 85% -10%,
+      transparent 0deg,
+      rgba(127, 209, 185, 0.07) 12deg,
+      transparent 24deg,
+      rgba(236, 238, 233, 0.05) 40deg,
+      transparent 58deg
+    ),
+    linear-gradient(180deg, rgba(236, 238, 233, 0.03), transparent 40%);
+}
+
+.rays::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(127, 209, 185, 0.06) 50%,
+    transparent 58%
+  );
+  transform: translateX(-12%);
+  animation: rayDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes rayDrift {
+  from {
+    transform: translateX(-12%);
+  }
+  to {
+    transform: translateX(12%);
+  }
+}
+
+.openGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 12dvh, 8rem) 0 4rem;
+  align-items: end;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.name {
+  font-size: clamp(3.5rem, 11vw, 8.5rem);
+  text-transform: uppercase;
+}
+
+.nameSecond {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--muted);
+}
+
+.promise {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.45;
+  max-width: 26ch;
+  animation: riseIn 900ms ease both;
+}
+
+.facts {
+  display: grid;
+  gap: 0.9rem;
+  margin: 2.5rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.facts > div {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+}
+
+.facts dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Scene 2: Hold / pin (CSS sticky + scroll-driven) ---------- */
+
+.hold {
+  min-height: 280dvh;
+  view-timeline-name: --hold;
+  view-timeline-axis: block;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.holdSticky {
+  position: sticky;
+  top: 0;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+}
+
+.holdStill {
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+@keyframes stillScale {
+  from {
+    transform: scale(0.985);
+  }
+  to {
+    transform: scale(1.015);
+  }
+}
+
+.holdKicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.holdTitle {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  max-width: 16ch;
+  margin-bottom: 3rem;
+}
+
+.beats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.beat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Scroll-driven lighting only where animation-timeline exists,
+   so content stays fully readable otherwise. No GSAP needed
+   because CSS sticky plus view-timeline handles this Hold still. */
+@supports (animation-timeline: view()) {
+  .holdStill {
+    animation: stillScale linear both;
+    animation-timeline: --hold;
+    animation-range: 0% 100%;
+  }
+
+  .beat {
+    opacity: 0.28;
+    transform: translateY(18px);
+    animation: beatLight linear both;
+    animation-timeline: --hold;
+  }
+
+  .beat:nth-child(1) {
+    animation-range: 0% 34%;
+  }
+  .beat:nth-child(2) {
+    animation-range: 30% 67%;
+  }
+  .beat:nth-child(3) {
+    animation-range: 63% 100%;
+  }
+
+  .card {
+    animation: cardIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 90%;
+  }
+}
+
+@keyframes beatLight {
+  from {
+    opacity: 0.28;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.beatIndex {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  padding-top: 0.35rem;
+}
+
+.beat h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.beat p {
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* ---------- Scene 3: Products (card grid cut) ---------- */
+
+.products {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 12dvh, 8rem) 0;
+}
+
+.productsHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.productsHead h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.productsHead p {
+  color: var(--muted);
+  max-width: 34ch;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  overflow: clip;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 22rem;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cardIndex {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.card h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.cardText {
+  color: var(--muted);
+  max-width: 38ch;
+}
+
+.cardLink {
+  margin-top: auto;
+  align-self: flex-start;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  transition: transform 200ms ease;
+}
+
+.cardLink:hover {
+  border-color: var(--accent);
+  background: rgba(127, 209, 185, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Glare sweep on hover: transform-only sheen, progressive enhancement */
+.glare::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 44%,
+    rgba(236, 238, 233, 0.09) 50%,
+    transparent 56%
+  );
+  transform: translateX(-60%);
+  opacity: 0;
+}
+
+.glare:hover::after {
+  opacity: 1;
+  transform: translateX(60%);
+  transition: transform 700ms ease, opacity 300ms ease;
+}
+
+/* ---------- Scene 4: Links (editorial index) ---------- */
+
+.links {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.linksInner {
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 12dvh, 8rem) 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.linksInner h2 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkList a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1.4rem 0.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  transition: transform 220ms ease;
+}
+
+.linkList a:hover {
+  color: var(--accent);
+  transform: translateX(10px);
+}
+
+.linkHandle {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- Scene 5: Close CTA ---------- */
+
+.close {
+  width: min(820px, 100% - 3rem);
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: clamp(5rem, 12dvh, 8rem) 0;
+}
+
+.close h2 {
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  text-transform: uppercase;
+}
+
+.close p {
+  color: var(--muted);
+  max-width: 48ch;
+}
+
+.closeLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.closeButton,
+.closeGhost {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  transition: transform 200ms ease;
+}
+
+.closeButton {
+  background: var(--accent);
+  color: #0c1210;
+  font-weight: 650;
+}
+
+.closeButton:hover {
+  transform: translateY(-2px);
+  background: #93dcc4;
+}
+
+.closeGhost {
+  border: 1px solid var(--line);
+}
+
+.closeGhost:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.colophon {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .openGrid {
+    grid-template-columns: 1fr;
+    align-content: end;
+  }
+
+  /* Tall sticky still can exceed small viewports once beats stack,
+     so release the pin and let beats read in normal flow. */
+  .hold {
+    min-height: 0;
+  }
+
+  .holdSticky {
+    position: static;
+    min-height: 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .linksInner {
+    grid-template-columns: 1fr;
+  }
+
+  .beat {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .beatIndex {
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rays::after {
+    animation: none;
+  }
+  .beat,
+  .holdStill,
+  .card,
+  .promise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

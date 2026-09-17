@@ -1,0 +1,53 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0;
+  display: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 209, 185, 0.55);
+}
+
+/* Only show the custom cursor when the enhancement is active.
+   The native cursor is hidden only then; touch and reduced-motion
+   keep the native cursor. */
+.hasCursor,
+.hasCursor * {
+  cursor: none;
+}
+
+.hasCursor .dot,
+.hasCursor .ring {
+  display: block;
+}
+
+@media (pointer: coarse) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

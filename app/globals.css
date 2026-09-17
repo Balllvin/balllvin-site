@@ -1,0 +1,93 @@
+:root {
+  --bg: #0b0d0e;
+  --bg-soft: #111415;
+  --ink: #eceee9;
+  --muted: #a8afa9;
+  --line: rgba(236, 238, 233, 0.14);
+  --accent: #7fd1b9;
+  --accent-deep: #2e6f5e;
+  --card: #141718;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans), "Avenir Next", "Segoe UI", system-ui,
+    -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100dvh;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+  font-weight: 650;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.skipLink {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 60;
+  background: var(--ink);
+  color: #111;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transform: translateY(-5rem);
+  transition: transform 180ms ease;
+}
+
+.skipLink:focus-visible {
+  transform: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(127, 209, 185, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
