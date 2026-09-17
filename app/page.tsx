@@ -9,16 +9,16 @@ const X_STATUS =
 const ARTICLE_HREF =
   "/articles/why-wall-street-and-silicon-valley-are-both-wrong-about-spacex";
 
-const crewBeats = [
+const holdBeats = [
   {
     index: "01",
-    title: "AI crew",
-    text: "Agents that read, draft, and check work before I ship.",
+    title: "Automated me",
+    text: "Say what you want and tools plus agents on my stack do the boring research parts. I basically automated myself.",
   },
   {
     index: "02",
     title: "Research",
-    text: "Notes on markets and systems I actually use.",
+    text: "Figuring out the markets.",
   },
   {
     index: "03",
@@ -41,7 +41,7 @@ export default function Page() {
           </div>
           <div className={styles.openRight}>
             <p className={styles.promise}>
-              I ship Marauder and Notebook, built with an AI crew I use daily.
+              Automating Creation
             </p>
             <dl className={styles.facts}>
               <div>
@@ -50,7 +50,7 @@ export default function Page() {
               </div>
               <div>
                 <dt>Work</dt>
-                <dd>Marauder, Notebook, AI crew</dd>
+                <dd>Marauder, Notebook</dd>
               </div>
               <div>
                 <dt>Also</dt>
@@ -70,7 +70,7 @@ export default function Page() {
           <div className={styles.holdStill}>
             <h2 className={styles.holdTitle}>What I build</h2>
             <ol className={styles.beats}>
-              {crewBeats.map((beat) => (
+              {holdBeats.map((beat) => (
                 <li key={beat.index} className={styles.beat}>
                   <span className={styles.beatIndex}>{beat.index}</span>
                   <div>
@@ -97,7 +97,8 @@ export default function Page() {
           >
             <h3>Notebook</h3>
             <p className={styles.cardText}>
-              Research workspace for notes, folders, workflows.
+              Live research notebooks for site, Mac, and CLI. One notebook
+              per project. You keep the data.
             </p>
           </a>
           <a
@@ -108,7 +109,9 @@ export default function Page() {
           >
             <h3>Marauder</h3>
             <p className={styles.cardText}>
-              Long/short research desk for markets, with notebooks and agents.
+              Private stack that runs Notebook with MAIN, Terminal, PWA, and
+              bots. Long/short research app. Speed and actually-live over
+              feature theater.
             </p>
           </a>
         </div>
@@ -118,19 +121,17 @@ export default function Page() {
         <div className={styles.writingInner}>
           <div className={styles.writingHead}>
             <h2 id="writing-title">Writing</h2>
-            <p>Articles on markets, compute, and what I am watching.</p>
           </div>
           <div className={`${styles.writingCard} ${styles.glare}`}>
             <a className={styles.writingMain} href={ARTICLE_HREF}>
-              <time className={styles.writingDate} dateTime="2026-08-31">
-                31 Aug 2026
-              </time>
+              <span className={styles.writingMeta}>
+                <time className={styles.writingDate} dateTime="2026-08-31">
+                  31 Aug 2026
+                </time>
+              </span>
               <h3>
                 Why Wall Street and Silicon Valley are both wrong about SpaceX
               </h3>
-              <p className={styles.cardText}>
-                You get scaling through ROI. SpaceX is the fastest snowball.
-              </p>
             </a>
             <a
               className={styles.readOnX}

@@ -246,7 +246,17 @@
   .card {
     animation: cardIn linear both;
     animation-timeline: view();
-    animation-range: entry 0% entry 90%;
+    animation-range: entry 0% entry 85%;
+  }
+
+  .cards .card:nth-child(2) {
+    animation-range: entry 10% entry 95%;
+  }
+
+  .writingCard {
+    animation: cardIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 85%;
   }
 }
 
@@ -281,13 +291,12 @@
 /* ---------- Scene 3: Products (card grid cut) ---------- */
 
 .products {
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: min(1200px, 100% - 3rem);
   margin: 0 auto;
-  padding: clamp(5rem, 12dvh, 8rem) 0;
+  padding: clamp(3rem, 7dvh, 4.5rem) 0;
 }
 
 .productsHead {
@@ -296,7 +305,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .productsHead h2 {
@@ -409,25 +418,15 @@
 .writingInner {
   width: min(1200px, 100% - 3rem);
   margin: 0 auto;
-  padding: clamp(5rem, 12dvh, 8rem) 0;
+  padding: clamp(3rem, 7dvh, 4.5rem) 0;
 }
 
 .writingHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .writingHead h2 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-}
-
-.writingHead p {
-  color: var(--muted);
-  max-width: 34ch;
 }
 
 .writingCard {
@@ -436,10 +435,10 @@
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   max-width: 52rem;
   transition: border-color 200ms ease, transform 200ms ease;
 }
@@ -452,7 +451,7 @@
 .writingMain {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.6rem;
   text-decoration: none;
   color: inherit;
 }
@@ -464,6 +463,16 @@
 }
 
 .writingDate {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.writingMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
   font-size: 0.8rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
