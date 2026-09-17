@@ -71,11 +71,12 @@ export default function Page() {
       </section>
 
       <section className={styles.products} aria-labelledby="products-title">
-        <div className={styles.productsHead}>
+        <div className={styles.productsHead} data-reveal>
           <h2 id="products-title">Shipped Work</h2>
         </div>
-        <div className={styles.cards}>
+        <div className={styles.cards} data-reveal-group>
           <a
+            data-reveal-item
             className={`${styles.card} ${styles.glare}`}
             href="https://notebook-marauder.up.railway.app"
             target="_blank"
@@ -88,6 +89,7 @@ export default function Page() {
             </p>
           </a>
           <a
+            data-reveal-item
             className={`${styles.card} ${styles.glare}`}
             href="https://marauder-main.up.railway.app"
             target="_blank"
@@ -105,10 +107,10 @@ export default function Page() {
 
       <section className={styles.writing} aria-labelledby="writing-title">
         <div className={styles.writingInner}>
-          <div className={styles.writingHead}>
+          <div className={styles.writingHead} data-reveal>
             <h2 id="writing-title">Writing</h2>
           </div>
-          <article className={styles.writingStrip}>
+          <article className={styles.writingStrip} data-reveal>
             <time className={styles.writingDate} dateTime="2026-08-31">
               31 Aug 2026
             </time>
@@ -134,9 +136,9 @@ export default function Page() {
 
       <section className={styles.links} aria-labelledby="links-title">
         <div className={styles.linksInner}>
-          <h2 id="links-title">Elsewhere</h2>
-          <ul className={styles.linkList}>
-            <li>
+          <h2 id="links-title" data-reveal>Elsewhere</h2>
+          <ul className={styles.linkList} data-reveal-group>
+            <li data-reveal-item>
               <a
                 href="https://github.com/Balllvin"
                 target="_blank"
@@ -146,13 +148,13 @@ export default function Page() {
                 <span className={styles.linkHandle}>Balllvin</span>
               </a>
             </li>
-            <li>
+            <li data-reveal-item>
               <a href="https://x.com/balllvest" target="_blank" rel="noreferrer">
                 <span>X</span>
                 <span className={styles.linkHandle}>balllvest</span>
               </a>
             </li>
-            <li>
+            <li data-reveal-item>
               <a
                 href="https://cursor.com/@balllvin"
                 target="_blank"
@@ -167,9 +169,9 @@ export default function Page() {
       </section>
 
       <section className={styles.close} aria-labelledby="close-title">
-        <h2 id="close-title">Say hello</h2>
-        <p>Message me on X for work, research, or investing talk.</p>
-        <div className={styles.closeLinks}>
+        <h2 id="close-title" data-reveal>Say hello</h2>
+        <p data-reveal>Message me on X for work, research, or investing talk.</p>
+        <div className={styles.closeLinks} data-reveal>
           <a
             className={styles.closeButton}
             href="https://x.com/balllvest"

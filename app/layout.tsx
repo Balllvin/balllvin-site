@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollProgress from "./components/ScrollProgress";
 import Cursor from "./components/Cursor";
 import Grain from "./components/Grain";
+import ScrollFilm from "./components/ScrollFilm";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         <ScrollProgress />
         <Grain />
         <Cursor />
+        <ScrollFilm />
         <main id="main">{children}</main>
       </body>
     </html>
