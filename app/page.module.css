@@ -316,6 +316,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.9rem;
+  align-items: stretch;
 }
 
 .card {
@@ -329,9 +330,12 @@
   flex-direction: column;
   gap: 0.55rem;
   min-height: 0;
+  height: 100%;
+  align-self: stretch;
   text-decoration: none;
   color: inherit;
-  transition: border-color 200ms ease, transform 200ms ease;
+  /* border only — transform transition fights GSAP reveal y/scale */
+  transition: border-color 200ms ease;
 }
 
 .card:hover {
