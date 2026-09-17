@@ -20,13 +20,13 @@ type Particle = {
   depth: number;
 };
 
-const MAX_PARTICLES = 2200;
-const MIN_PARTICLES = 600;
+const MAX_PARTICLES = 11000;
+const MIN_PARTICLES = 3000;
 const RADIUS = 150;
 const DPR_CAP = 1.75;
 
 // CloseParticles: canvas dust confined to the `.close` section.
-// Dense even grid + jitter (~area/900, clamp 600–2200); ambient rise + sway.
+// Dense even grid + jitter (~area/180, clamp 3000–11000); ambient rise + sway.
 // Prefer many smaller/dimmer dots over fewer large ones. Pointer nearby
 // lifts/scatters with velocity + soft spring home. rAF + refs only, no setState.
 // Static single frame for prefers-reduced-motion; ambient-only on touch.
@@ -61,7 +61,7 @@ export default function CloseParticles() {
       const area = Math.max(1, w * h);
       const count = Math.max(
         MIN_PARTICLES,
-        Math.min(MAX_PARTICLES, Math.round(area / 900))
+        Math.min(MAX_PARTICLES, Math.round(area / 180))
       );
       // Even coverage: grid sized to count, then jitter inside each cell.
       const cols = Math.max(1, Math.round(Math.sqrt((count * w) / Math.max(1, h))));
@@ -81,8 +81,8 @@ export default function CloseParticles() {
             oy: 0,
             vx: 0,
             vy: 0,
-            r: 0.35 + Math.random() * 0.85,
-            a: 0.1 + Math.random() * 0.28,
+            r: 0.25 + Math.random() * 0.55,
+            a: 0.14 + Math.random() * 0.34,
             tint: Math.random(),
             phase: Math.random() * Math.PI * 2,
             swaySpeed: 0.2 + Math.random() * 0.5,
