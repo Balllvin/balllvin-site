@@ -106,14 +106,6 @@
   align-items: end;
 }
 
-.eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-}
-
 .name {
   font-size: clamp(3.5rem, 11vw, 8.5rem);
   text-transform: uppercase;
@@ -126,10 +118,12 @@
 }
 
 .promise {
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  line-height: 1.45;
-  max-width: 26ch;
-  margin-top: clamp(2rem, 6dvh, 4rem);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+  max-width: 18ch;
+  margin: clamp(2rem, 6dvh, 4rem) 0 0;
   animation: riseIn 900ms ease both;
 }
 
@@ -137,12 +131,18 @@
   padding-top: clamp(1.5rem, 5dvh, 3rem);
 }
 
+/* Hero divide: spacing + type contrast between promise and sub row */
 .heroSub {
-  margin: 1.25rem 0 0;
+  margin: clamp(1.75rem, 3.5dvh, 2.5rem) 0 0;
+  padding-top: clamp(1.1rem, 2.2dvh, 1.5rem);
+  border-top: 1px solid var(--line);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--muted);
 }
 
 .heroSub a {
@@ -197,14 +197,6 @@
   to {
     transform: scale(1.015);
   }
-}
-
-.holdKicker {
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
 }
 
 .holdTitle {
@@ -310,14 +302,6 @@
 
 /* ---------- Scene 3: Products (card grid cut) ---------- */
 
-.sectionKicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 0.6rem;
-}
-
 .products {
   display: flex;
   flex-direction: column;
@@ -373,27 +357,6 @@
   }
 }
 
-.cardTop {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.cardIndex {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-}
-
-.cardLive {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
 .card h3 {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
 }
@@ -403,20 +366,6 @@
   max-width: 40ch;
   font-size: 0.98rem;
   line-height: 1.5;
-}
-
-.cardHint {
-  margin-top: 0.65rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.card:hover .cardHint {
-  color: var(--accent);
 }
 
 /* Glare sweep on hover: transform-only sheen, progressive enhancement */
@@ -441,20 +390,11 @@
   transition: transform 700ms ease, opacity 300ms ease;
 }
 
-/* ---------- Scene 3b: Writing (editorial strip cut) ---------- */
+/* ---------- Scene 3b: Writing (clean editorial strip) ---------- */
 
 .writing {
   border-top: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(127, 209, 185, 0.06), transparent 38%),
-    var(--bg);
-}
-
-.writing::before {
-  content: "";
-  display: block;
-  height: 3px;
-  background: var(--accent);
+  background: var(--bg-soft);
 }
 
 .writingInner {
@@ -469,42 +409,30 @@
 
 .writingHead h2 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--muted);
 }
 
 .writingStrip {
   border-top: 1px solid var(--line);
-  padding-top: 1.25rem;
+  padding-top: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-}
-
-.writingMetaRow {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
+  gap: 0.85rem;
 }
 
 .writingDate {
+  font-size: 0.9rem;
+  color: var(--muted);
   white-space: nowrap;
 }
 
 .writingTitle {
   text-decoration: none;
   color: inherit;
-  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
-  line-height: 1.08;
+  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
   letter-spacing: -0.03em;
   font-weight: 650;
-  max-width: 24ch;
+  max-width: 26ch;
 }
 
 .writingTitle:hover {
@@ -518,6 +446,7 @@
   gap: 0.5rem 1.75rem;
   border-top: 1px solid var(--line);
   padding-top: 1rem;
+  margin-top: 0.15rem;
 }
 
 .readEssay {
@@ -546,7 +475,7 @@
 .links {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--bg-soft);
+  background: var(--bg);
 }
 
 .linksInner {
@@ -689,10 +618,6 @@
 
   .linksInner {
     grid-template-columns: 1fr;
-  }
-
-  .writingMetaRow {
-    flex-wrap: wrap;
   }
 
   .beat {

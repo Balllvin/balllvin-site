@@ -72,7 +72,6 @@ export default function Page() {
 
       <section className={styles.products} aria-labelledby="products-title">
         <div className={styles.productsHead}>
-          <p className={styles.sectionKicker}>S.01 / Live software</p>
           <h2 id="products-title">Shipped Work</h2>
         </div>
         <div className={styles.cards}>
@@ -82,18 +81,11 @@ export default function Page() {
             target="_blank"
             rel="noreferrer"
           >
-            <span className={styles.cardTop}>
-              <span className={styles.cardIndex}>P.01</span>
-              <span className={styles.cardLive}>
-                Live <span aria-hidden="true">↗</span>
-              </span>
-            </span>
             <h3>Notebook</h3>
             <p className={styles.cardText}>
               Live research notebooks for site, Mac, and CLI. One notebook
               per project. You keep the data.
             </p>
-            <span className={styles.cardHint}>Open the app</span>
           </a>
           <a
             className={`${styles.card} ${styles.glare}`}
@@ -101,19 +93,12 @@ export default function Page() {
             target="_blank"
             rel="noreferrer"
           >
-            <span className={styles.cardTop}>
-              <span className={styles.cardIndex}>P.02</span>
-              <span className={styles.cardLive}>
-                Live <span aria-hidden="true">↗</span>
-              </span>
-            </span>
             <h3>Marauder</h3>
             <p className={styles.cardText}>
               Private stack running Notebook with MAIN, Terminal, PWA, and
               bots. A long/short research app tuned for speed over feature
               theater.
             </p>
-            <span className={styles.cardHint}>Open the app</span>
           </a>
         </div>
       </section>
@@ -121,16 +106,12 @@ export default function Page() {
       <section className={styles.writing} aria-labelledby="writing-title">
         <div className={styles.writingInner}>
           <div className={styles.writingHead}>
-            <p className={styles.sectionKicker}>S.02 / Essay</p>
             <h2 id="writing-title">Writing</h2>
           </div>
           <article className={styles.writingStrip}>
-            <div className={styles.writingMetaRow}>
-              <span>On-site essay</span>
-              <time className={styles.writingDate} dateTime="2026-08-31">
-                31 Aug 2026
-              </time>
-            </div>
+            <time className={styles.writingDate} dateTime="2026-08-31">
+              31 Aug 2026
+            </time>
             <a className={styles.writingTitle} href={ARTICLE_HREF}>
               Why Wall Street and Silicon Valley are both wrong about SpaceX
             </a>
