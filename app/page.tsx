@@ -49,7 +49,7 @@ export default function Page() {
               </div>
               <div>
                 <dt>Work</dt>
-                <dd>AI crew, research, investing</dd>
+                <dd>Making AI useful and investing</dd>
               </div>
               <div>
                 <dt>Now</dt>
@@ -64,8 +64,7 @@ export default function Page() {
       <section className={styles.hold} aria-label="What I build">
         <div className={styles.holdSticky}>
           <div className={styles.holdStill}>
-            <p className={styles.holdKicker}>What I build</p>
-            <h2 className={styles.holdTitle}>Three tracks, one standard</h2>
+            <h2 className={styles.holdTitle}>What I build</h2>
             <ol className={styles.beats}>
               {crewBeats.map((beat) => (
                 <li key={beat.index} className={styles.beat}>
@@ -89,7 +88,6 @@ export default function Page() {
         </div>
         <div className={styles.cards}>
           <article className={`${styles.card} ${styles.glare}`}>
-            <p className={styles.cardIndex}>A</p>
             <h3>Notebook</h3>
             <p className={styles.cardText}>
               A working notebook for research and investing notes. Plain
@@ -105,7 +103,6 @@ export default function Page() {
             </a>
           </article>
           <article className={`${styles.card} ${styles.glare}`}>
-            <p className={styles.cardIndex}>B</p>
             <h3>Marauder</h3>
             <p className={styles.cardText}>
               The main Marauder build. The operational side of the same ideas:
@@ -182,7 +179,7 @@ export default function Page() {
             target="_blank"
             rel="noreferrer"
           >
-            Message on X
+            Message me on X
           </a>
           <a
             className={styles.closeGhost}
@@ -194,7 +191,7 @@ export default function Page() {
           </a>
         </div>
         <p className={styles.colophon}>
-          Alvin Stark, Zug Switzerland. Built with restraint.
+          Alvin Stark, Zug Switzerland.
         </p>
       </section>
     </div>
