@@ -152,32 +152,56 @@ export default function Page() {
 
       <section className={styles.links} aria-labelledby="links-title">
         <div className={styles.linksInner}>
-          <h2 id="links-title" data-reveal>Elsewhere</h2>
+          <div className={styles.linksHead} data-reveal>
+            <h2 id="links-title">Elsewhere</h2>
+          </div>
           <ul className={styles.linkList} data-reveal-group>
             <li data-reveal-item>
               <a
+                className={styles.linkRow}
                 href="https://github.com/Balllvin"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span>GitHub</span>
-                <span className={styles.linkHandle}>Balllvin</span>
-              </a>
-            </li>
-            <li data-reveal-item>
-              <a href="https://x.com/balllvest" target="_blank" rel="noreferrer">
-                <span>X</span>
-                <span className={styles.linkHandle}>balllvest</span>
+                <span className={styles.linkName}>GitHub</span>
+                <span className={styles.linkMeta}>
+                  <span className={styles.linkHandle}>Balllvin</span>
+                  <span className={styles.linkArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </span>
               </a>
             </li>
             <li data-reveal-item>
               <a
+                className={styles.linkRow}
+                href="https://x.com/balllvest"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className={styles.linkName}>X</span>
+                <span className={styles.linkMeta}>
+                  <span className={styles.linkHandle}>balllvest</span>
+                  <span className={styles.linkArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li data-reveal-item>
+              <a
+                className={styles.linkRow}
                 href="https://cursor.com/@balllvin"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span>Cursor</span>
-                <span className={styles.linkHandle}>balllvin</span>
+                <span className={styles.linkName}>Cursor</span>
+                <span className={styles.linkMeta}>
+                  <span className={styles.linkHandle}>balllvin</span>
+                  <span className={styles.linkArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </span>
               </a>
             </li>
           </ul>
