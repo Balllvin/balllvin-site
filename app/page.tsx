@@ -41,7 +41,7 @@ export default function Page() {
               Automating Creation
             </p>
             <p className={styles.heroSub}>
-              <span>Nerd at Heart</span>
+              <span>nerd at heart</span>
               <a
                 href="https://x.com/balllvest"
                 target="_blank"
