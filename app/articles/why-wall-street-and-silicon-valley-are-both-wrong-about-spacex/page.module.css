@@ -135,3 +135,43 @@
     transform: none;
   }
 }
+
+
+.cover {
+  margin: 0 0 2.5rem;
+  border-radius: 12px;
+  overflow: clip;
+  border: 1px solid var(--line);
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure {
+  margin: 2rem 0 2.25rem;
+  border-radius: 12px;
+  overflow: clip;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure figcaption {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.prose a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}

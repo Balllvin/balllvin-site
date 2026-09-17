@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
 const X_STATUS =
   "https://x.com/balllvest/status/2094370241543373260";
-const X_ARTICLE =
-  "https://x.com/i/article/2094190693774229504";
 
 export const metadata: Metadata = {
-  title: "Why Wall Street and Silicon Valley are both wrong about SpaceX | Alvin Stark",
+  title:
+    "Why Wall Street and Silicon Valley are both wrong about SpaceX | Alvin Stark",
   description:
-    "You get scaling laws through ROI. SpaceX is the fastest snowball - Wall Street and Silicon Valley are both right and both wrong.",
+    "You get scaling laws through ROI. SpaceX is the fastest snowball.",
 };
 
 export default function ArticlePage() {
@@ -18,7 +18,7 @@ export default function ArticlePage() {
     <article className={styles.article}>
       <header className={styles.header}>
         <Link className={styles.back} href="/">
-          Back home
+          ← Back home
         </Link>
         <p className={styles.meta}>
           <time dateTime="2026-08-31">31 Aug 2026</time>
@@ -35,16 +35,19 @@ export default function ArticlePage() {
           >
             Read it on X
           </a>
-          <a
-            className={styles.ghostLink}
-            href={X_ARTICLE}
-            target="_blank"
-            rel="noreferrer"
-          >
-            X article
-          </a>
         </p>
       </header>
+
+      <figure className={styles.cover}>
+        <Image
+          src="/articles/spacex/cover.jpg"
+          alt="SpaceX turns into a compute company — SemiAnalysis revenue chart"
+          width={2160}
+          height={864}
+          priority
+          sizes="(max-width: 720px) 100vw, 72ch"
+        />
+      </figure>
 
       <div className={styles.prose}>
         <p>Wall Street only cares about ROI</p>
@@ -110,13 +113,27 @@ export default function ArticlePage() {
         <p>
           They built Colossus 1 in 122 days, trained Grok 3 and 4 on it, and now
           is renting it to Anthropic for $1.25 billion a month ($15 bil ARR). If
-          the ~$12.9 b capex is right, $15 bil in and maybe $0.8 bil cash out for
-          power and ops then it leaves $SPCX with ~$14.2 bil in the bank, so cash
-          payback is about a year. Including depreciation in the equation they
-          have a roughly 73% margin, which you have to spread over the life of
-          the chips (4 years is assumed), and leaves them with ~$10.95 bil OCF a
-          year.
+          the ~$12.9 b capex is right, $15 bil in and maybe $0.8 bil cash out
+          for power and ops then it leaves $SPCX with ~$14.2 bil in the bank, so
+          cash payback is about a year. Including depreciation in the equation
+          they have a roughly 73% margin, which you have to spread over the life
+          of the chips (4 years is assumed), and leaves them with ~$10.95 bil
+          OCF a year.
         </p>
+
+        <figure className={styles.figure}>
+          <Image
+            src="/articles/spacex/chart-compute.png"
+            alt="SemiAnalysis chart: SpaceX turns into a compute company in eight quarters"
+            width={1200}
+            height={800}
+            sizes="(max-width: 720px) 100vw, 65ch"
+          />
+          <figcaption>
+            credit to Semi Analysis for their great research and chart
+          </figcaption>
+        </figure>
+
         <p>
           Everyone else spends two years building and earns nothing until it
           turns on, the snow ball starts moving later and therefore even if they
@@ -131,26 +148,36 @@ export default function ArticlePage() {
             on earth that could stop me from going bankrupt if I buy that much
             compute. Even though a part of my brain wonders if it&apos;s going
             to keep growing 10x, I can&apos;t buy $1 trillion a year of compute
-            in 2027. If I&apos;m just off by a year in that rate of growth, or if
-            the growth rate is 5x a year instead of 10x a year, then you go
+            in 2027. If I&apos;m just off by a year in that rate of growth, or
+            if the growth rate is 5x a year instead of 10x a year, then you go
             bankrupt. So you end up in a world where you&apos;re supporting
             hundreds of billions, not trillions.&quot;
           </p>
           <p>
-            &quot;Why haven&apos;t we signed $10 trillion of compute starting in
-            mid-2027? First of all, it can&apos;t be produced. But second, what
-            if the country of geniuses comes, but it comes in mid-2028 instead of
-            mid-2027? You go bankrupt.&quot;
+            &quot;Why haven&apos;t we signed $10 trillion of compute starting
+            in mid-2027? First of all, it can&apos;t be produced. But second,
+            what if the country of geniuses comes, but it comes in mid-2028
+            instead of mid-2027? You go bankrupt.&quot;
           </p>
         </blockquote>
         <p>
           But if you rent the compute out, take on the risk yourself then you
-          have higher returns (albeit maybe not higher risk adjusted returns, but
-          never bet against Elon). There is probably a near infinite demand for
-          intelligence, since the one willing to pay for it in the long term is
-          the one getting ROI.
+          have higher returns (albeit maybe not higher risk adjusted returns,
+          but never bet against Elon). There is probably a near infinite demand
+          for intelligence, since the one willing to pay for it in the long term
+          is the one getting ROI.
         </p>
-        <p>He Predicted it a while ago with this infamous post:</p>
+        <p>
+          He Predicted it a while ago with this{" "}
+          <a
+            href="https://x.com/elonmusk/status/1963443919150330139"
+            target="_blank"
+            rel="noreferrer"
+          >
+            infamous post
+          </a>
+          :
+        </p>
         <p>
           The crucial part is focusing on the profit, since that is what allows
           you to buy the next shitload of GPUs.
@@ -183,6 +210,17 @@ export default function ArticlePage() {
           cursor cloud agents more than I ever could).
         </p>
 
+        <figure className={styles.figure}>
+          <Image
+            src="/articles/spacex/chart-gw-stack.png"
+            alt="SemiAnalysis chart: revenue per gigawatt up the AI stack"
+            width={1200}
+            height={800}
+            sizes="(max-width: 720px) 100vw, 65ch"
+          />
+          <figcaption>credit to Semi Analysis again</figcaption>
+        </figure>
+
         <h2>What is next and Orbital Data Centers</h2>
         <p>
           Q2 closed at 1.4 GW. They said they will have 2 GW by December.
@@ -201,8 +239,8 @@ export default function ArticlePage() {
           He first said the next flight would try a catch. On 20 August he moved
           it: first Ship catch is a few months out (need more testing since
           flight 13 landing burn partially failed - and they are probably still
-          waiting on FAA approval), first reused Ship end of 2026 or early 2027.
-          Flight 14 is tracking around mid-September: first full orbit and
+          waiting on FAA approval), first reused Ship end of 2026 or early
+          2027. Flight 14 is tracking around mid-September: first full orbit and
           Starlink V3 to a real orbit, then a water landing (hopefully all will
           work fine).
         </p>
@@ -221,8 +259,8 @@ export default function ArticlePage() {
 
         <h2>What still has to happen</h2>
         <p>
-          The one-year payback has to keep holding as they add gigawatts, or just
-          not increase too much (whether from renting out or from selling
+          The one-year payback has to keep holding as they add gigawatts, or
+          just not increase too much (whether from renting out or from selling
           tokens).
         </p>
         <p>
@@ -245,24 +283,10 @@ export default function ArticlePage() {
 
         <h2>PS</h2>
         <p>
-          feedback is much appreciated and would love it if you have any comments
-          and I&apos;ll respond/answer to all
+          feedback is much appreciated and would love it if you have any
+          comments and I&apos;ll respond/answer to all
         </p>
       </div>
-
-      <footer className={styles.footer}>
-        <a
-          className={styles.readOnX}
-          href={X_STATUS}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Read it on X
-        </a>
-        <Link className={styles.back} href="/">
-          Back home
-        </Link>
-      </footer>
     </article>
   );
 }
