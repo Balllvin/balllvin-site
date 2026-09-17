@@ -31,7 +31,6 @@ export default function Page() {
         <div className={styles.rays} aria-hidden="true" />
         <div className={styles.openGrid}>
           <div className={styles.openLeft}>
-            <p className={styles.eyebrow}>Zug / Switzerland</p>
             <h1 id="alvin-title" className={styles.name}>
               Alvin
               <span className={styles.nameSecond}>Stark</span>
@@ -49,7 +48,7 @@ export default function Page() {
               </div>
               <div>
                 <dt>Work</dt>
-                <dd>Making AI useful and investing</dd>
+                <dd>Making AI useful, and Investing</dd>
               </div>
               <div>
                 <dt>Now</dt>
