@@ -2,6 +2,7 @@
 // Copy must stay concrete. No filler adjectives.
 
 import styles from "./page.module.css";
+import CloseParticles from "./components/CloseParticles";
 
 const articles = [
   {
@@ -209,16 +210,19 @@ export default function Page() {
       </section>
 
       <section className={styles.close} aria-labelledby="close-title">
-        <h2 id="close-title" data-reveal>Say hello</h2>
-        <div className={styles.closeLinks} data-reveal>
-          <a
-            className={styles.closeButton}
-            href="https://x.com/balllvest"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Message me on X
-          </a>
+        <CloseParticles />
+        <div className={styles.closeInner}>
+          <h2 id="close-title" data-reveal>Say hello</h2>
+          <div className={styles.closeLinks} data-reveal>
+            <a
+              className={styles.closeButton}
+              href="https://x.com/balllvest"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Message me on X
+            </a>
+          </div>
         </div>
       </section>
     </div>

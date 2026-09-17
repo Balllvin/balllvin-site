@@ -619,24 +619,39 @@
 /* ---------- Scene 5: Close CTA ---------- */
 
 .close {
-  width: min(820px, 100% - 3rem);
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  overflow: clip;
   min-height: 100dvh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: clamp(5rem, 12dvh, 8rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.closeInner {
+  position: relative;
+  z-index: 1;
+  width: min(820px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
-  padding: clamp(5rem, 12dvh, 8rem) 0;
 }
 
 .close h2 {
   font-size: clamp(2.75rem, 8vw, 5.5rem);
   text-transform: uppercase;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .closeLinks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 0.5rem;
 }
