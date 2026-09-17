@@ -12,9 +12,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Alvin Stark - Zug, Switzerland",
+  title: "Alvin Stark - Switzerland",
   description:
-    "Alvin Stark builds an AI crew, research notes, and investing tools from Zug, Switzerland.",
+    "Alvin Stark builds an AI crew, research notes, and investing tools from Switzerland.",
 };
 
 export const viewport: Viewport = {

@@ -44,7 +44,7 @@ export default function Page() {
             <dl className={styles.facts}>
               <div>
                 <dt>Base</dt>
-                <dd>Zug, Switzerland</dd>
+                <dd>Switzerland</dd>
               </div>
               <div>
                 <dt>Work</dt>
@@ -190,7 +190,7 @@ export default function Page() {
           </a>
         </div>
         <p className={styles.colophon}>
-          Alvin Stark, Zug Switzerland.
+          Alvin Stark, Switzerland.
         </p>
       </section>
     </div>
