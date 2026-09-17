@@ -109,12 +109,18 @@
 .name {
   font-size: clamp(3.5rem, 11vw, 8.5rem);
   text-transform: uppercase;
+  line-height: 0.88;
 }
 
 .nameSecond {
   display: block;
   color: transparent;
   -webkit-text-stroke: 1px var(--muted);
+  line-height: 0.88;
+  /* Keep the stroke fully visible, then pull the block bottom back
+     to the glyph bottom so grid end-alignment is visual, not line-box. */
+  padding-bottom: 0.07em;
+  margin-bottom: -0.07em;
 }
 
 .promise {
@@ -129,19 +135,22 @@
 
 .openRight {
   padding-top: clamp(1.5rem, 5dvh, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-/* Hero divide: spacing + type contrast between promise and sub row */
+/* Hero divide: spacing + type contrast between promise and sub row (no rule) */
 .heroSub {
-  margin: clamp(1.75rem, 3.5dvh, 2.5rem) 0 0;
+  margin: clamp(1.75rem, 3.5dvh, 2.5rem) 0 -0.06em;
   padding-top: clamp(1.1rem, 2.2dvh, 1.5rem);
-  border-top: 1px solid var(--line);
+  padding-bottom: 0.06em;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.25;
   color: var(--muted);
 }
 
@@ -377,14 +386,16 @@
 }
 
 .writingTop {
-  border-bottom: 2px solid var(--ink);
+  /* Whisper rule under My Slop — thinner + lower opacity than --line (0.14) */
+  border-bottom: 0.5px solid rgba(236, 238, 233, 0.035);
   padding-bottom: 1rem;
   margin-bottom: 0;
 }
 
 .writingTop h2 {
   font-size: clamp(2.75rem, 7vw, 5rem);
-  text-transform: uppercase;
+  text-transform: none; /* keep exact "My Slop" casing */
+  letter-spacing: -0.03em;
 }
 
 .essayList {
@@ -430,25 +441,23 @@
   gap: 0.5rem 1.75rem;
 }
 
-.readEssay {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-  text-decoration-color: var(--accent);
-  font-weight: 600;
-}
-
-.readEssay:hover {
-  color: var(--accent);
-}
-
+.readEssay,
 .readOnX {
+  /* Equal treatment: muted default; underline + accent only on hover/focus */
   text-decoration: none;
   color: var(--muted);
+  font-weight: 500;
   font-size: 0.95rem;
 }
 
-.readOnX:hover {
+.readEssay:hover,
+.readEssay:focus-visible,
+.readOnX:hover,
+.readOnX:focus-visible {
   color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--accent);
 }
 
 /* ---------- Scene 4: Elsewhere (cinematic credit-strip rows) ---------- */
@@ -625,11 +634,6 @@
   text-transform: uppercase;
 }
 
-.close p {
-  color: var(--muted);
-  max-width: 48ch;
-}
-
 .closeLinks {
   display: flex;
   flex-wrap: wrap;
@@ -663,13 +667,6 @@
 .closeGhost:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-}
-
-.colophon {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.85rem;
 }
 
 /* ---------- Responsive ---------- */

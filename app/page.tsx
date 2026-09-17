@@ -113,7 +113,7 @@ export default function Page() {
       <section className={styles.writing} aria-labelledby="writing-title">
         <div className={styles.writingInner}>
           <div className={styles.writingTop} data-reveal>
-            <h2 id="writing-title">Writing</h2>
+            <h2 id="writing-title">My Slop</h2>
           </div>
           <div className={styles.essayList} data-reveal-group>
             {articles.map((article) => (
@@ -210,7 +210,6 @@ export default function Page() {
 
       <section className={styles.close} aria-labelledby="close-title">
         <h2 id="close-title" data-reveal>Say hello</h2>
-        <p data-reveal>Message me on X for work, research, or investing talk.</p>
         <div className={styles.closeLinks} data-reveal>
           <a
             className={styles.closeButton}
@@ -221,7 +220,6 @@ export default function Page() {
             Message me on X
           </a>
         </div>
-        <p className={styles.colophon}>Alvin Stark</p>
       </section>
     </div>
   );
