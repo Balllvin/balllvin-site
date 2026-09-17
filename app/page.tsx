@@ -46,7 +46,7 @@ export default function Page() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Read my opinions on X.
+                I have opinions. They’re on X.
               </a>
             </p>
           </div>
