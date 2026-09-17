@@ -22,11 +22,11 @@ const holdBeats = [
   },
   {
     index: "02",
-    line: "Figuring out how the markets work",
+    line: "Figure out how the Market works",
   },
   {
     index: "03",
-    line: "Investing in companies I believe in",
+    line: "Invest in Companies I believe in",
   },
 ];
 
