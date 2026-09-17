@@ -12,18 +12,15 @@ const ARTICLE_HREF =
 const holdBeats = [
   {
     index: "01",
-    title: "Automated me",
-    text: "Say what you want and tools plus agents on my stack do the boring research parts. I basically automated myself.",
+    line: "Automate Myself",
   },
   {
     index: "02",
-    title: "Research",
-    text: "Figuring out the markets.",
+    line: "Figuring out how the markets work",
   },
   {
     index: "03",
-    title: "Investing",
-    text: "A separate account for ideas and risk.",
+    line: "Investing in companies I believe in",
   },
 ];
 
@@ -65,18 +62,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className={styles.hold} aria-label="What I build">
+      <section className={styles.hold} aria-label="What I Do">
         <div className={styles.holdSticky}>
           <div className={styles.holdStill}>
-            <h2 className={styles.holdTitle}>What I build</h2>
+            <h2 className={styles.holdTitle}>What I Do</h2>
             <ol className={styles.beats}>
               {holdBeats.map((beat) => (
                 <li key={beat.index} className={styles.beat}>
                   <span className={styles.beatIndex}>{beat.index}</span>
-                  <div>
-                    <h3>{beat.title}</h3>
-                    <p>{beat.text}</p>
-                  </div>
+                  <span className={styles.beatLine}>{beat.line}</span>
                 </li>
               ))}
             </ol>
@@ -175,16 +169,6 @@ export default function Page() {
                 <span className={styles.linkHandle}>balllvin</span>
               </a>
             </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/alvin-stark-a12a6129b"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>LinkedIn</span>
-                <span className={styles.linkHandle}>Alvin Stark</span>
-              </a>
-            </li>
           </ul>
         </div>
       </section>
@@ -200,14 +184,6 @@ export default function Page() {
             rel="noreferrer"
           >
             Message me on X
-          </a>
-          <a
-            className={styles.closeGhost}
-            href="https://www.linkedin.com/in/alvin-stark-a12a6129b"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Connect on LinkedIn
           </a>
         </div>
         <p className={styles.colophon}>Alvin Stark</p>
