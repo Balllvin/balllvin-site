@@ -1,3 +1,9 @@
+@property --ray-from {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 205deg;
+}
+
 .film {
   background: var(--bg);
 }
@@ -17,10 +23,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  animation: rayTwist 16s ease-in-out infinite alternate;
   background:
     radial-gradient(55% 40% at 82% 0%, rgba(127, 209, 185, 0.28), transparent 68%),
     conic-gradient(
-      from 205deg at 88% -8%,
+      from var(--ray-from, 205deg) at 88% -8%,
       transparent 0deg,
       rgba(127, 209, 185, 0.14) 10deg,
       transparent 22deg,
@@ -57,6 +64,15 @@
   );
   transform: translateX(-22%) rotate(-2deg);
   animation: rayDrift 12s ease-in-out infinite alternate;
+}
+
+@keyframes rayTwist {
+  from {
+    --ray-from: 195deg;
+  }
+  to {
+    --ray-from: 220deg;
+  }
 }
 
 @keyframes rayDrift {
@@ -652,6 +668,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .rays,
   .rays::before,
   .rays::after {
     animation: none;
