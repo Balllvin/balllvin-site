@@ -3,11 +3,16 @@
 
 import styles from "./page.module.css";
 
-const X_STATUS =
-  "https://x.com/balllvest/status/2094370241543373260";
-
-const ARTICLE_HREF =
-  "/articles/why-wall-street-and-silicon-valley-are-both-wrong-about-spacex";
+const articles = [
+  {
+    title: "Why Wall Street and Silicon Valley are both wrong about SpaceX",
+    href: "/articles/why-wall-street-and-silicon-valley-are-both-wrong-about-spacex",
+    dateTime: "2026-08-31",
+    dateLabel: "31 Aug 2026",
+    xStatus:
+      "https://x.com/balllvest/status/2094370241543373260",
+  },
+];
 
 const holdBeats = [
   {
@@ -107,30 +112,41 @@ export default function Page() {
 
       <section className={styles.writing} aria-labelledby="writing-title">
         <div className={styles.writingInner}>
-          <div className={styles.writingHead} data-reveal>
+          <div className={styles.writingTop} data-reveal>
             <h2 id="writing-title">Writing</h2>
           </div>
-          <article className={styles.writingStrip} data-reveal>
-            <time className={styles.writingDate} dateTime="2026-08-31">
-              31 Aug 2026
-            </time>
-            <a className={styles.writingTitle} href={ARTICLE_HREF}>
-              Why Wall Street and Silicon Valley are both wrong about SpaceX
-            </a>
-            <div className={styles.writingLinks}>
-              <a className={styles.readEssay} href={ARTICLE_HREF}>
-                Read the essay <span aria-hidden="true">→</span>
-              </a>
-              <a
-                className={styles.readOnX}
-                href={X_STATUS}
-                target="_blank"
-                rel="noreferrer"
+          <div className={styles.essayList} data-reveal-group>
+            {articles.map((article) => (
+              <article
+                key={article.href}
+                className={styles.essayRow}
+                data-reveal-item
               >
-                Read it on X <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
+                <div className={styles.essayTopRow}>
+                  <h3 className={styles.essayTitle}>{article.title}</h3>
+                  <time
+                    className={styles.essayDate}
+                    dateTime={article.dateTime}
+                  >
+                    {article.dateLabel}
+                  </time>
+                </div>
+                <div className={styles.essayLinks}>
+                  <a className={styles.readEssay} href={article.href}>
+                    Read the essay <span aria-hidden="true">→</span>
+                  </a>
+                  <a
+                    className={styles.readOnX}
+                    href={article.xStatus}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Read it on X <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

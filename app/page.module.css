@@ -363,7 +363,7 @@
   transition: transform 700ms ease, opacity 300ms ease;
 }
 
-/* ---------- Scene 3b: Writing (clean editorial strip) ---------- */
+/* ---------- Scene 3b: Writing (full-width editorial essay index) ---------- */
 
 .writing {
   border-top: 1px solid var(--line);
@@ -374,52 +374,60 @@
   width: min(1200px, 100% - 3rem);
   margin: 0 auto;
   padding: clamp(4rem, 10dvh, 6.5rem) 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: start;
 }
 
-.writingHead h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+.writingTop {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1rem;
+  margin-bottom: 0;
 }
 
-.writingStrip {
-  border-top: 1px solid var(--line);
-  padding-top: 1.1rem;
+.writingTop h2 {
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  text-transform: uppercase;
+}
+
+.essayList {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
 }
 
-.writingDate {
+.essayRow {
+  padding: 2rem 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.essayTopRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.essayTitle {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 60ch;
+}
+
+.essayDate {
   font-size: 0.9rem;
   color: var(--muted);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.writingTitle {
-  text-decoration: none;
-  color: inherit;
-  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  font-weight: 650;
-  max-width: 26ch;
-}
-
-.writingTitle:hover {
-  color: var(--accent);
-}
-
-.writingLinks {
+.essayLinks {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.5rem 1.75rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-  margin-top: 0.15rem;
 }
 
 .readEssay {
@@ -443,7 +451,7 @@
   color: var(--accent);
 }
 
-/* ---------- Scene 4: Links (editorial index) ---------- */
+/* ---------- Scene 4: Elsewhere (compact centered link column) ---------- */
 
 .links {
   border-top: 1px solid var(--line);
@@ -452,39 +460,44 @@
 }
 
 .linksInner {
-  width: min(1200px, 100% - 3rem);
+  width: min(560px, 100% - 3rem);
   margin: 0 auto;
-  padding: clamp(5rem, 12dvh, 8rem) 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(4rem, 10dvh, 6rem) 0;
+  text-align: center;
 }
 
 .linksInner h2 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
 }
 
 .linkList {
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: 1px solid var(--line);
 }
 
 .linkList a {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.75rem;
   text-decoration: none;
-  padding: 1.4rem 0.25rem;
+  padding: 1rem 0.25rem;
   border-bottom: 1px solid var(--line);
-  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
-  transition: transform 220ms ease;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  transition: color 180ms ease;
 }
 
 .linkList a:hover {
   color: var(--accent);
-  transform: translateX(10px);
+  transform: none;
 }
 
 .linkHandle {
@@ -584,13 +597,9 @@
     min-height: 0;
   }
 
-  .writingInner {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .linksInner {
-    grid-template-columns: 1fr;
+  .essayTopRow {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
   }
 
   .beat {
