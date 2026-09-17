@@ -3,6 +3,12 @@
 
 import styles from "./page.module.css";
 
+const X_STATUS =
+  "https://x.com/balllvest/status/2094370241543373260";
+
+const ARTICLE_HREF =
+  "/articles/why-wall-street-and-silicon-valley-are-both-wrong-about-spacex";
+
 const crewBeats = [
   {
     index: "01",
@@ -91,7 +97,7 @@ export default function Page() {
           >
             <h3>Notebook</h3>
             <p className={styles.cardText}>
-              Research and investing notes in one place.
+              Research workspace for notes, folders, workflows.
             </p>
           </a>
           <a
@@ -102,9 +108,39 @@ export default function Page() {
           >
             <h3>Marauder</h3>
             <p className={styles.cardText}>
-              Research desk for long and short work.
+              Long/short research desk aiming to democratize serious research.
             </p>
           </a>
+        </div>
+      </section>
+
+      <section className={styles.writing} aria-labelledby="writing-title">
+        <div className={styles.writingInner}>
+          <div className={styles.writingHead}>
+            <h2 id="writing-title">Writing</h2>
+            <p>Articles on markets, compute, and what I am watching.</p>
+          </div>
+          <div className={`${styles.writingCard} ${styles.glare}`}>
+            <a className={styles.writingMain} href={ARTICLE_HREF}>
+              <time className={styles.writingDate} dateTime="2026-08-31">
+                31 Aug 2026
+              </time>
+              <h3>
+                Why Wall Street and Silicon Valley are both wrong about SpaceX
+              </h3>
+              <p className={styles.cardText}>
+                You get scaling through ROI. SpaceX is the fastest snowball.
+              </p>
+            </a>
+            <a
+              className={styles.readOnX}
+              href={X_STATUS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read it on X
+            </a>
+          </div>
         </div>
       </section>
 

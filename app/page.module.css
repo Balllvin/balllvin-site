@@ -399,6 +399,94 @@
   transition: transform 700ms ease, opacity 300ms ease;
 }
 
+/* ---------- Scene 3b: Writing ---------- */
+
+.writing {
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.writingInner {
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 12dvh, 8rem) 0;
+}
+
+.writingHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.writingHead h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.writingHead p {
+  color: var(--muted);
+  max-width: 34ch;
+}
+
+.writingCard {
+  position: relative;
+  overflow: clip;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 52rem;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.writingCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.writingMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.writingMain h3 {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.15;
+  max-width: 28ch;
+}
+
+.writingDate {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.readOnX {
+  align-self: flex-start;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.35rem;
+  background: var(--accent);
+  color: #0c1210;
+  font-weight: 650;
+  font-size: 0.95rem;
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.readOnX:hover {
+  transform: translateY(-2px);
+  background: #93dcc4;
+}
+
 /* ---------- Scene 4: Links (editorial index) ---------- */
 
 .links {
@@ -562,9 +650,13 @@
   .beat,
   .holdStill,
   .card,
+  .writingCard,
   .promise {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+  .readOnX:hover {
     transform: none;
   }
 }
