@@ -12,6 +12,8 @@
 
 .open {
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
   min-height: 100dvh;
   display: flex;
   align-items: stretch;
@@ -691,6 +693,15 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 800px) {
+  /* Mobile hero must own the whole first screen: stable small-viewport
+     height (svh, not dvh, so the hero doesn't stretch as the iOS toolbar
+     collapses mid-scroll) plus a 1px guard so subpixel rounding can never
+     reveal a sliver of "What I Do" at scrollY=0. */
+  .open {
+    min-height: calc(100vh + 1px);
+    min-height: calc(100svh + 1px);
+  }
+
   .openGrid {
     grid-template-columns: 1fr;
     align-content: end;
