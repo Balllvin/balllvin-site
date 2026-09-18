@@ -5,6 +5,7 @@ import ScrollProgress from "./components/ScrollProgress";
 import Cursor from "./components/Cursor";
 import Grain from "./components/Grain";
 import ScrollFilm from "./components/ScrollFilm";
+import { Analytics } from "@vercel/analytics/next";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Cursor />
         <ScrollFilm />
         <main id="main">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
